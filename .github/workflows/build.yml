@@ -61,7 +61,8 @@ jobs:
         run: |
           mkdir -p dist
           go build -trimpath -ldflags="-s -w" -o "dist/${{ matrix.output }}" ./cmd/cusp-local-proxy
-          sha256sum "dist/${{ matrix.output }}" > "dist/${{ matrix.output }}.sha256"
+          cd dist
+          sha256sum "${{ matrix.output }}" > "${{ matrix.output }}.sha256"
 
       - name: Upload workflow artifact
         uses: actions/upload-artifact@v7
