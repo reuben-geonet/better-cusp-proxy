@@ -20,7 +20,7 @@ CUSP devices use now unsupported security protocols.
 Run the proxy on the machine:
 
 ```sh
-cusp-local-proxy 192.168.185.135
+cusp-local-proxy 192.168.0.100
 ```
 
 Then open:
@@ -32,13 +32,13 @@ http://127.0.0.1:4444/
 Use a different local port:
 
 ```sh
-cusp-local-proxy -listen 127.0.0.1:8080 192.168.185.135
+cusp-local-proxy -listen 127.0.0.1:8080 192.168.0.100
 ```
 
 If you need the local side to be HTTPS:
 
 ```sh
-cusp-local-proxy -local-tls 192.168.185.135
+cusp-local-proxy -local-tls 192.168.0.100
 ```
 
 The default local HTTP mode is intentional. It avoids making users add a browser exception for a temporary localhost certificate.
@@ -48,7 +48,7 @@ The default local HTTP mode is intentional. It avoids making users add a browser
 Run locally on Linux or WSL:
 
 ```sh
-nix run . -- 192.168.185.135
+nix run . -- 192.168.0.100
 ```
 
 Build a Linux binary:
